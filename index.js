@@ -151,27 +151,11 @@ class Sqlite extends Base {
     const { action, sql, params } = { ...args }
 
     return new Promise((resolve, reject) => {
-      const workerArr = [...this._workers]
-        .reverse()
-        .find(([, jobData]) => {
-          return !jobData.job && jobData.isOnline
-        })
-      const job = {
+      this._queue.push({
         resolve,
         reject,
         message: { action, sql, params }
-      }
-
-      if (!Array.isArray(workerArr)) {
-        this._queue.push(job)
-
-        return
-      }
-
-      const [worker, jobData] = workerArr
-
-      jobData.job = job
-      worker.postMessage(job.message)
+      })
     })
   }
 
@@ -250,7 +234,7 @@ class Sqlite extends Base {
           return
         }
 
-        jobData.timer = setTimeout(poll, 3000)
+        jobData.timer = setImmediate(poll)
       }
       const process = ({ err, result }) => {
         if (err) {
@@ -280,7 +264,7 @@ class Sqlite extends Base {
           jobData.error = _err
         })
         .on('exit', (code) => {
-          clearTimeout(jobData.timer)
+          clearImmediate(jobData.timer)
           this._workers.delete(worker)
 
           if (jobData.job) {
