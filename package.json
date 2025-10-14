@@ -21,7 +21,7 @@
     "bfx-facs-base": "git+https://github.com/bitfinexcom/bfx-facs-base.git"
   },
   "engine": {
-    "node": ">=18.17.1"
+    "node": ">=20.18.1"
   },
   "license": "Apache-2.0",
   "contributors": [
