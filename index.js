@@ -7,7 +7,7 @@ const { Worker } = require('worker_threads')
 const os = require('os')
 
 const Database = require('better-sqlite3')
-const Base = require('bfx-facs-base')
+const Base = require('@bitfinex/bfx-facs-base')
 
 const DB_WORKER_ACTIONS = require(
   './worker/db-worker-actions/db-worker-actions.const'
