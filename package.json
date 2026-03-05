@@ -18,7 +18,7 @@
   "dependencies": {
     "@bitfinex/bfx-facs-base": "git+https://github.com/bitfinexcom/bfx-facs-base.git",
     "async": "3.2.4",
-    "better-sqlite3": "12.4.1"
+    "better-sqlite3": "12.6.2"
   },
   "engines": {
     "node": ">=20.18.1"
