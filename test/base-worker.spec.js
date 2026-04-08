@@ -1,12 +1,11 @@
 'use strict'
 
-const chai = require('chai')
-chai.use(require('chai-fs'))
-const { assert } = chai
-const path = require('path')
+const { assert } = require('chai')
+const path = require('node:path')
 const {
-  mkdirSync
-} = require('fs')
+  mkdirSync,
+  existsSync
+} = require('node:fs')
 
 const {
   getTableCreationQuery,
@@ -61,7 +60,7 @@ describe('Base worker', () => {
         assert.isOk(fac._workers.size >= 1)
         assert.isString(fac.opts.dbPath)
         assert.isOk(path.isAbsolute(fac.opts.dbPath))
-        assert.pathExists(fac.opts.dbPath)
+        assert.isOk(existsSync(fac.opts.dbPath))
 
         fac.stop((err) => {
           assert.ifError(err)
@@ -83,7 +82,7 @@ describe('Base worker', () => {
         assert.isOk(fac._workers.size >= 1)
         assert.isString(fac.opts.dbPath)
         assert.isOk(path.isAbsolute(fac.opts.dbPath))
-        assert.notPathExists(fac.opts.dbPath)
+        assert.isNotOk(existsSync(fac.opts.dbPath))
 
         fac.stop((err) => {
           assert.ifError(err)
