@@ -30,7 +30,7 @@
     "Vladimir Voronkov <vsvoronkov@gmail.com>"
   ],
   "devDependencies": {
-    "chai": "^4.5.0",
+    "chai": "^6.2.2",
     "chai-fs": "^2.0.0",
     "mocha": "^11.7.5",
     "standard": "^17.1.2"
