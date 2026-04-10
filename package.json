@@ -1,6 +1,6 @@
 {
   "name": "@bitfinex/bfx-facs-db-better-sqlite",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Bitfinex DB Sqlite3 Facility",
   "author": {
     "name": "Vladimir Voronkov",
@@ -30,9 +30,8 @@
     "Vladimir Voronkov <vsvoronkov@gmail.com>"
   ],
   "devDependencies": {
-    "chai": "^4.5.0",
-    "chai-fs": "^2.0.0",
-    "mocha": "^11.1.0",
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5",
     "standard": "^17.1.2"
   },
   "standard": {
