@@ -13,7 +13,8 @@
   "scripts": {
     "test": "npm run lint && npm run unit",
     "unit": "mocha './test/**/*.spec.js' --config .mocharc.json",
-    "lint": "bfx-lint-js --mocha"
+    "lint": "bfx-lint-js --mocha",
+    "lint:fix": "bfx-lint-js --fix --mocha"
   },
   "dependencies": {
     "@bitfinex/bfx-facs-base": "git+https://github.com/bitfinexcom/bfx-facs-base.git#v2.0.0",
