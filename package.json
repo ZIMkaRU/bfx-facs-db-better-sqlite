@@ -16,7 +16,7 @@
     "lint": "standard --env mocha"
   },
   "dependencies": {
-    "@bitfinex/bfx-facs-base": "git+https://github.com/bitfinexcom/bfx-facs-base.git",
+    "@bitfinex/bfx-facs-base": "git+https://github.com/bitfinexcom/bfx-facs-base.git#v2.0.0",
     "async": "^3.2.6",
     "better-sqlite3": "13.0.1"
   },
